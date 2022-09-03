@@ -7,6 +7,7 @@ import java.net.Socket;
 
 public class Client {
     public static void main(String argv[]) throws Exception {
+
         String bookResult;
 
         // client socket initialization localhost: server address 6789: server service port number

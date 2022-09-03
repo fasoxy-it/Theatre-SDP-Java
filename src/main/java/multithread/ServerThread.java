@@ -16,13 +16,18 @@ public class ServerThread extends Thread {
 
     // the constructor argument is an established socket
     public ServerThread(Socket s) {
+
         connectionSocket = s;
+
         try {
+
             inFromClient =
                     new BufferedReader(
                             new InputStreamReader(connectionSocket.getInputStream()));
+
             outToClient =
                     new DataOutputStream(connectionSocket.getOutputStream());
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -45,6 +50,7 @@ public class ServerThread extends Thread {
             outToClient.writeBytes(bookRequest);
 
             connectionSocket.close();
+
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
